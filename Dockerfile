@@ -7,6 +7,7 @@ RUN apt-get update && \
         lsb-release \
         gnupg \
         gobuster \
+        iputils-ping \
         default-mysql-client \
         kali-tools-top10 -y
 
