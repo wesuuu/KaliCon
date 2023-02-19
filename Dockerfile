@@ -8,6 +8,10 @@ RUN apt-get update && \
         gnupg \
         gobuster \
         iputils-ping \
+        vsftpd \
+        ftp \
+        seclists \
+        dirb \
         default-mysql-client \
         kali-tools-top10 -y
 
