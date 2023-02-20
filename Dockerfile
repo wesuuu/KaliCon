@@ -12,6 +12,11 @@ RUN apt-get update && \
         ftp \
         seclists \
         dirb \
+        wafw00f \
+        whatweb \
+        arjun \
+        responder \
+        john \
         default-mysql-client \
         kali-tools-top10 -y
 
