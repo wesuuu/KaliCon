@@ -102,7 +102,7 @@ jobs:
             type=raw,value=${{ matrix.tag }}-nightly
 
       - name: Build and push Docker image
-        id: build-and-push
+        id: build-and-push-dockerhub
         uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
         with:
           context: .
