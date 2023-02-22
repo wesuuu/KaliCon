@@ -101,13 +101,12 @@ jobs:
           tags: |
             type=raw,value=${{ matrix.tag }}-nightly
 
-      - name: Build and push Docker image
-        id: build-and-push-dockerhub
-        uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
+
+        name: Build and push
+        uses: docker/build-push-action@v4
+        id: build-push-to-dockerhub
         with:
-          context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-docker.outputs.tags }}
           labels: ${{ steps.meta-docker.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+
