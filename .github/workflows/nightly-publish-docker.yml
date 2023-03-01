@@ -64,7 +64,7 @@ jobs:
             type=raw,value=${{ matrix.tag }}-nightly
 
 
-        name: Build and push
+      - name: Build and push
         uses: docker/build-push-action@v4
         id: build-push-to-dockerhub
         with:
