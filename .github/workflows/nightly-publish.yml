@@ -50,10 +50,13 @@ jobs:
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
-        platforms: linux/${{ matrix.tag }}
+        with:
+          platforms: linux/${{ matrix.tag }}
 
       - name: Setup Docker buildx
         uses: docker/setup-buildx-action@79abd3f86f79a9d68a23c75a09a9a85889262adf
+        with:
+          platforms: linux/${{ matrix.tag }}
 
       # Login against a Docker registry except on PR
       # https://github.com/docker/login-action
