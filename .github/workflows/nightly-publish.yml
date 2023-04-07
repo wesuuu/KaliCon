@@ -25,7 +25,6 @@ jobs:
     strategy:
       matrix:
         tag:
-        - latest
         - amd64
         - arm64 
     runs-on: ubuntu-latest
