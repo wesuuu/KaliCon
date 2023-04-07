@@ -8,8 +8,6 @@ name: nightly-publish-ghcr
 on:
   schedule:
     - cron: '23 10 * * *'
-  push:
-    branches: master
 
 env:
   # Use docker.io for Docker Hub if empty
