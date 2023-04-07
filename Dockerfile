@@ -1,5 +1,4 @@
 ARG TAG=latest
-ARG ARCH=amd64
 FROM kalilinux/kali-rolling:$TAG
 
 RUN echo "deb http://http.us.debian.org/debian jessie main contrib non-free" >> /etc/apt/sources.lst
@@ -21,16 +20,19 @@ RUN apt-get update && \
         default-mysql-client \
         dnsutils \
         ffuf \
-        wfuz \
+        wfuzz \
         kali-tools-top10 -y
 
 COPY ./install-scripts/ /opt/install-scripts
 
-
 # install scripts
 WORKDIR /opt/install-scripts
 
-ENV ARCH=
+ARG ARCH=amd64
+ENV ARCH=$ARCH
+
+ARG CARBONYL_VERSION=0.0.3
+ENV CARBONYL_VERSION=$CARBONYL_VERSION
 
 RUN chmod -R +x . && \
     ./*.sh 
