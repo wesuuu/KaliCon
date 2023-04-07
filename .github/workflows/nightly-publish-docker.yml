@@ -74,5 +74,5 @@ jobs:
         id: build-push-to-dockerhub
         with:
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta-docker.outputs.tags }}
+          tags: wuykimpang/${{ env.IMAGE_NAME }}:${{ steps.meta-docker.outputs.tags }}
           labels: ${{ steps.meta-docker.outputs.labels }}
