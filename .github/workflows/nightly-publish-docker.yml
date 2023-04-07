@@ -66,6 +66,8 @@ jobs:
           tags: |
             type=raw,value=${{ matrix.tag }}-nightly
 
+      - name: echo tags
+        run: echo "Tags are $${{ steps.meta.outputs.tags }}"
 
       - name: Build and push
         uses: docker/build-push-action@v4

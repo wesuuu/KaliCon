@@ -71,8 +71,7 @@ jobs:
 
       - name: Prune cache
         run: docker system prune -af          
-      - name: echo tags
-        run: echo "Tags are $${{ steps.meta.outputs.tags }}"
+
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
       - name: Build and push Docker image
