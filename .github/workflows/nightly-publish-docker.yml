@@ -62,7 +62,7 @@ jobs:
         id: meta-docker
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: wuykimpang/${{ env.IMAGE_NAME }}
+          images: ${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=${{ matrix.tag }}-nightly
 
@@ -74,5 +74,5 @@ jobs:
         id: build-push-to-dockerhub
         with:
           push: ${{ github.event_name != 'pull_request' }}
-          tags: wuykimpang/${{ env.IMAGE_NAME }}:${{ steps.meta-docker.outputs.tags }}
+          tags: ${{ steps.meta-docker.outputs.tags }}
           labels: ${{ steps.meta-docker.outputs.labels }}
