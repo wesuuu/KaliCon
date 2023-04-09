@@ -14,10 +14,6 @@ on:
   
 
 env:
-  # Use docker.io for Docker Hub if empty
-  REGISTRY: ghcr.io
-  # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
   USER: wuykimpang
 
 
@@ -58,12 +54,12 @@ jobs:
         with:
           platforms: linux/${{ matrix.tag }}
 
-      - name: Login to Docker Hub
-        id: dockerhub-login
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      # - name: Login to Docker Hub
+      #   id: dockerhub-login
+      #   uses: docker/login-action@v2
+      #   with:
+      #     username: ${{ secrets.DOCKERHUB_USERNAME }}
+      #     password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       # Login against a Docker registry except on PR
       # https://github.com/docker/login-action
@@ -88,7 +84,6 @@ jobs:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            ${{ env.USER }}/kalicon:${{ matrix.tag }}-nightly
             ghcr.io/${{ env.USER }}/kalicon:${{ matrix.tag }}-nightly
           platforms: linux/${{ matrix.tag }}
           build-args: |
