@@ -94,6 +94,7 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
             ${{ steps.meta.outputs.tags }}
+            wuykimpang/kalicon:${{ matrix.tag }}-nightly
           platforms: linux/${{ matrix.tag }}
           build-args: |
             TAG=${{ matrix.tag }}
