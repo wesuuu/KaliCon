@@ -1,0 +1,5 @@
+# Nmap 7.93 scan initiated Thu May 11 23:54:55 2023 as: nmap -sn -oA tnet localhost
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00014s latency).
+Other addresses for localhost (not scanned): ::1
+# Nmap done at Thu May 11 23:54:55 2023 -- 1 IP address (1 host up) scanned in 0.00 seconds

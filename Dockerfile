@@ -21,6 +21,10 @@ RUN apt-get update && \
         dnsutils \
         ffuf \
         wfuzz \
+        vim \
+        wordlists \
+        dirbuster \
+        awscli \
         kali-tools-top10 -y
 
 COPY ./install-scripts/ /opt/install-scripts
@@ -36,5 +40,7 @@ ENV CARBONYL_VERSION=$CARBONYL_VERSION
 
 RUN chmod -R +x . && \
     ./*.sh 
+
+# Basic scripts
 
 WORKDIR /root

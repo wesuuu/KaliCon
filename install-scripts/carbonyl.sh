@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# doesn't work for arm64
+
 apt install -y \
     libgconf-2-4 \
     libatk1.0-0 \
